@@ -1,7 +1,19 @@
-function ListItem({ text, handleDelete }) {
+function ListItem({ name, handleDelete }) {
   return (
     <li>
-      {text} <button onClick={handleDelete}>x</button>
+      {name}{' '}
+      <button
+        style={{
+          backgroundColor: 'red',
+          color: 'white',
+          cursor: 'pointer',
+          padding: '0 10px',
+          borderRadius: '5px',
+        }}
+        onClick={handleDelete}
+      >
+        x
+      </button>
     </li>
   );
 }

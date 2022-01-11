@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import PokemonList from '../PokemonList';
 
 function PokemonViewer({ id }) {
   const [pokemon, setPokemon] = useState('');
@@ -22,7 +22,7 @@ function PokemonViewer({ id }) {
       })
       .then((data) => {
         setPokemon(data);
-        console.log(pokemon)
+        // console.log(pokemon)
         setIsPending(false); //spinner
         setError(null); //initial state
       })
@@ -35,7 +35,6 @@ function PokemonViewer({ id }) {
         }
       });
   }, [id]);
-  
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -46,17 +45,17 @@ function PokemonViewer({ id }) {
   //   fetchData();
   // }, [id]);
 
-  
   return pokemon ? (
     <div className="pokemon-viewer">
-      <h1>{pokemon.name}</h1>
+      <hr />
+      <h2>{pokemon.name.toUpperCase()}</h2>
       <h3>{pokemon.weight} Kg</h3>
       <img
         src={pokemon.sprites.other['official-artwork'].front_default}
         alt={pokemon.name}
       ></img>
-      {/* button need to pass as a prop the id */}
-      <button>ADD</button>
+      <hr />
+      <PokemonList data={pokemon.name} />
     </div>
   ) : (
     <>

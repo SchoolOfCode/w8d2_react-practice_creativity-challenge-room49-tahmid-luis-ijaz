@@ -1,11 +1,10 @@
-import ListItem from "../ListItem";
+import ListItem from '../ListItem';
 
-function List({ toDos, handleDelete }) {
-  console.log("List rerender");
+function List({ pokemonList, handleDelete }) {
   return (
-    <ul>
-      {toDos.map((todo, i) => (
-        <ListItem key={i} text={todo} handleDelete={() => handleDelete(i)} />
+    <ul style={{listStyle: 'none'}}>
+      {pokemonList.map((pokemon, i) => (
+        <ListItem key={i} name={pokemon} handleDelete={() => handleDelete(i)} />
       ))}
     </ul>
   );
