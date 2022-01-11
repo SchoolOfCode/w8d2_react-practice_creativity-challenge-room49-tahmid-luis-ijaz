@@ -3,7 +3,6 @@ import PokemonList from '../PokemonList';
 
 function PokemonViewer({ id }) {
   const [pokemon, setPokemon] = useState('');
-  const [pokemonList, setPokemonList] = useState([])
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
   // useEffect(()=>{
@@ -11,9 +10,7 @@ function PokemonViewer({ id }) {
   //   .then(res =>{return res.json()})
   //   .then(data =>{setPokemon(data)})
   // },[id])
-function addPokemon(){
 
-}
   //fetching 1 pokemon form API
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
