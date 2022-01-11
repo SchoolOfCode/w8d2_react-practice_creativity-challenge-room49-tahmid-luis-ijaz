@@ -51,6 +51,7 @@ function PokemonViewer({ id }) {
       <h2>{pokemon.name.toUpperCase()}</h2>
       <h3>{pokemon.weight} Kg</h3>
       <img
+        style={{ width: '300px' }}
         src={pokemon.sprites.other['official-artwork'].front_default}
         alt={pokemon.name}
       ></img>
