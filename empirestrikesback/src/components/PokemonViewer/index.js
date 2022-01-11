@@ -59,7 +59,7 @@ function PokemonViewer({ id }) {
     </div>
   ) : (
     <>
-      {isPending && <div>Loading...</div>}
+      {isPending && <div>Loading.....</div>}
       {error && <div>{error}</div>}
     </> //show error or spinner
   );
